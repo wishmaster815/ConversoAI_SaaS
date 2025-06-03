@@ -55,6 +55,7 @@ Follow these steps to run Converso locally:
    STRIPE_SECRET_KEY=your-stripe-secret-key
    STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
    NEXT_PUBLIC_VAPI_API_KEY=your-vapi-api-key
+   NEXT_PUBLIC_SENTRY_DSN=your-sentry-dsn
 
 4. **Run the app**
    ```bash
