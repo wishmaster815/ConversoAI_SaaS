@@ -31,11 +31,12 @@
 
 ---
 
-## 📸 Preview
+## 🔍 Live Preview
 
-![Converso LMS Preview]([https://your-preview-image-url.com](https://converso-ai-ten.vercel.app/))
+🚀 **Try Out the Application Now**  
+👉 [Converso – AI-Powered LMS](https://converso-ai-ten.vercel.app/)
 
----
+Experience real-time learning assistance, AI companions, and more — all in one place.
 
 ## 🧪 Getting Started
 
