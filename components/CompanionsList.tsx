@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { cn, getSubjectColor } from "@/lib/utils"
+import { Companion } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
 

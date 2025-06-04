@@ -2,7 +2,7 @@
 
 import { auth } from "@clerk/nextjs/server"
 import { createSupabaseClient } from "@/lib/supabase"
-import { CreateCompanion, GetAllCompanions } from "@/types"
+import { CreateCompanion, GetAllCompanions, Companion } from "@/types"
 import companionSession from "@/app/companions/[id]/page";
 import { createClient } from "@supabase/supabase-js";
 
@@ -76,9 +76,15 @@ export const getRecentSessions = async (limit = 10) => {
 
     if (error) throw new Error(error.message);
 
-    return data.map(session => session.companions);
-    // return data.map(session => session.companions);
+    // Filter out duplicate companions by using a Map with companion IDs as keys
+    const uniqueCompanions = new Map();
+    data.forEach((session: { companions: Companion }) => {
+        if (!uniqueCompanions.has(session.companions.id)) {
+            uniqueCompanions.set(session.companions.id, session.companions);
+        }
+    });
 
+    return Array.from(uniqueCompanions.values());
 }
 
 export const getUserSessions = async (userId: string, limit = 10) => {
