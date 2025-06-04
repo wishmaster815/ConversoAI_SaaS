@@ -121,7 +121,8 @@ export const getUserCompanions = async (userId: string) => {
 export const newCompanionPermission = async () => {
     const { userId, has } = await auth()
     const supabase = createSupabaseClient()
-    let limit = 0
+    let limit = 3 // Default limit for new accounts
+
     if (has({ plan: 'pro' })) {
         return true
     }
@@ -136,11 +137,6 @@ export const newCompanionPermission = async () => {
 
     if (error) throw new Error(error.message);
 
-    const companionCount = data?.length
-    if (companionCount >= limit) {
-        return false;
-    }
-    else {
-        return true;
-    }
+    const companionCount = data?.length || 0
+    return companionCount < limit;
 }
