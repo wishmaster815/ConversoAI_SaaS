@@ -33,7 +33,7 @@
 
 ## 📸 Preview
 
-![Converso LMS Preview](https://your-preview-image-url.com)
+![Converso LMS Preview]([https://your-preview-image-url.com](https://converso-ai-ten.vercel.app/))
 
 ---
 
